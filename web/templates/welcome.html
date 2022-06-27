@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container my-4">
-    <h1 class="text-center">¡Bienvenido!</h1>
-    <h3 class="pt-3 mx-3">Revisa nuestros flanes exclusivos:</h3>
+<div class="container my-5 text-center">
+    <h1>¡Bienvenid@ {{ user.username }}!</h1>
+    <h3 class="pt-3 mx-3">Tenemos una lista de productos exclusivos para ti. ¿Quieres conocer más?</h3>
+    <a class="btn text-white mx-3 my-2" href="{% url 'contacto' %}" style="background-color:#8766c4">Contáctanos</a>
     <div class="pt-3 mx-3">
         <div class="row row-cols-1 row-cols-md-3 g-4">
         {% for flan in flanes_privados %}

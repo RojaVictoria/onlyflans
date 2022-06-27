@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Flan, ContactForm
 from .forms import ContactFormModelForm
 from django.http import HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
 
 
 def index(request):
@@ -16,6 +17,7 @@ def about(request):
     return render(request, 'about.html')
 
 
+@login_required
 def welcome(request):
     flanes_privados = Flan.objects.filter(is_private=True)
     diccionario = {
