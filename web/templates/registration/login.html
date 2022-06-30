@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container" style="list-style-position: inside">
-    <h1 class="text-center my-4">Iniciar sesión</h1>
+<div class="container my-md-4 my-3" style="list-style-position: inside">
+    <h1 class="text-center border-color p-2">Iniciar sesión</h1>
     <form action="/accounts/login/" method="post" class="text-center mb-4">
         {% csrf_token %}
         {% if form.errors %}
@@ -15,19 +15,19 @@
             {% endif %}
         {% endif %}
         <div>
-            <label for="">
-                Usuario:
+            <label for="" class="my-2">
+                Nombre de usuario:
             </label>
             <div>
                 {{ form.username }}
             </div>
-            <label for="">
+            <label for="" class="my-2">
                 Contraseña:
             </label>
             <div>
                 {{ form.password }}
             </div>
-            <input type="submit" value="Iniciar sesión" class="btn my-3 text-white" style="background-color:#8766c4">
+            <input type="submit" value="Iniciar sesión" class="btn my-3 text-white color-base">
         </div>
     </form>
 </div>

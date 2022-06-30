@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container my-5" style="list-style-position: inside">
-    <h1 class="text-center">Contáctanos</h1>
+<div class="container my-md-4 my-3" style="list-style-position: inside">
+    <h1 class="text-center border-color p-2">Contáctanos</h1>
     <form action="/contacto/" method="post" class="text-center mb-4">
         {% csrf_token %}
         {{ form.non_field_errors }}
         <div class="mb-3 text-center">
             <label for="{{ form.customer_name.id_for_label }}" class="form-label">
-                {{ form.customer_name.label_tag }}
+                Nombre:
             </label>
             <div>
                 {{ form.customer_name }}
@@ -18,7 +18,7 @@
         </div>
         <div class="mb-3 text-center">
             <label for="{{ form.customer_email.id_for_label }}" class="form-label">
-                {{ form.customer_email.label_tag }}
+                Correo electrónico:
             </label>
             <div>
                 {{ form.customer_email }}
@@ -29,7 +29,7 @@
         </div>
         <div class="mb-3 text-center">
             <label for="{{ form.message.id_for_label }}" class="form-label">
-                {{ form.message.label_tag }}
+                Mensaje:
             </label>
             <div>
                 {{ form.message }}
@@ -38,7 +38,7 @@
                 {{ form.message.errors }}
             </div>
         </div>
-        <input type="submit" value="Enviar" class="btn my-3 text-white" style="background-color:#8766c4">
+        <input type="submit" value="Enviar" class="btn text-white color-base">
     </form>
 </div>
 {% endblock %}

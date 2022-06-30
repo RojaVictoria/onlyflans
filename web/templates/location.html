@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<div class="container my-md-4 my-3">
+    <h1 class="text-center border-color p-2">Nuestros Locales</h1>
+    <div class="pt-4 mx-3">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for local in locales %}
+          <div class="col">
+            <div class="card h-100">
+              <img src="{{ local.image_url }}" class="card-img-top" alt="Flan 1">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">{{local.name}}</h5>
+                <p class="card-text"><i class="fa-solid fa-location-dot"></i> {{local.address}}</p>
+                <p class="fw-light" style="font-size:0.9em">{{local.opening_hours}}</p>
+                {% if not local.open %}
+                <p class="card-text text-danger">Próximamente</p>
+                {% else %}
+                <p class="card-text text-success">Abierto</p>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

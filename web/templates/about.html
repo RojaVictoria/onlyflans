@@ -1,11 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container my-5">
-    <h1 class="text-center">Sobre Nosotros</h1>
-    <div class="mx-3 mt-3">
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem itaque quis odio voluptate, minima excepturi nisi tempora aliquid porro unde dignissimos explicabo magnam. Animi quas reprehenderit tempora, numquam unde eligendi!</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem alias, enim at et distinctio numquam debitis, delectus voluptatibus corporis repudiandae possimus magni consequuntur dignissimos maiores nisi ut praesentium, a excepturi?</p>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem itaque quis odio voluptate, minima excepturi nisi tempora aliquid porro unde dignissimos explicabo magnam. Animi quas reprehenderit tempora, numquam unde eligendi!</p>
+{% load static %}
+<div class="container-md my-md-4 my-3">
+    <h1 class="text-center border-color p-2">¿Quiénes somos?</h1>
+    <div class="row mt-5 mx-5">
+        <div class="col-xs-12 col-sm-6 col-md-5">
+            <img src="{% static './img/favicon.png' %}" class="mx-auto d-block" style="max-width: 70%">
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-7 text-center mt-4">
+            <h3 class="title-color">OnlyFlans es una empresa enfocada en el mundo de la pastelería y los postres</h3>
+            <p class="lh-lg">En especial en la venta de flan(de ahí su nombre), nace en 2021 en Santiago de Chile como una empresa familiar que pretende entregar productos de calidad a su clientela, estando ubicada en Providencia, a pasos del metro Parque Bustamante.</p>
+        </div>
     </div>
 </div>
 {% endblock %}

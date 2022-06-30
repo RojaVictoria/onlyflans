@@ -1,0 +1,19 @@
+body {
+    font-family: 'Mulish', sans-serif;
+}
+
+h1 {
+    font-family: 'DM Serif Text', serif;
+}
+
+.color-base {
+    background-color: #7a7fc8;
+}
+
+.title-color {
+    color: #7a7fc8;
+}
+
+.border-color {
+    border-bottom: 2px solid #7a7fc8;
+}

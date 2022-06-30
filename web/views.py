@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Flan, ContactForm
+from .models import Flan, ContactForm, Local
 from .forms import ContactFormModelForm
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
@@ -26,7 +26,7 @@ def welcome(request):
     return render(request, 'welcome.html', diccionario)
 
 
-def contacto(request):
+def contact(request):
     if request.method == 'POST':
         form = ContactFormModelForm(request.POST)
         if form.is_valid():
@@ -34,8 +34,16 @@ def contacto(request):
             return HttpResponseRedirect('/exito/')
     else:
         form = ContactFormModelForm()
-    return render(request, 'contacto.html', {'form': form})
+    return render(request, 'contact.html', {'form': form})
 
 
-def exito(request):
-    return render(request, 'exito.html', {})
+def success(request):
+    return render(request, 'success.html', {})
+
+
+def location(request):
+    locales = Local.objects.all()
+    diccionario = {
+        'locales': locales,
+    }
+    return render(request, 'location.html', diccionario)
