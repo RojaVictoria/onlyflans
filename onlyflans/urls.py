@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from web.views import index, about, welcome, contact, success, location
+from web.views import index, about, welcome, contact, success, location, register
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,5 +27,6 @@ urlpatterns = [
     path('exito/', success, name='success'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('locales/', location, name='location'),
+    path('register/', register, name='register'),
 ]
 

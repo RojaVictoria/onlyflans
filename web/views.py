@@ -3,6 +3,7 @@ from .models import Flan, ContactForm, Local
 from .forms import ContactFormModelForm
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
+from .forms import UserForm
 
 
 def index(request):
@@ -47,3 +48,15 @@ def location(request):
         'locales': locales,
     }
     return render(request, 'location.html', diccionario)
+
+
+def register(request):
+    if request.method == 'POST':
+        form = UserForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/register_tipo?user=' + str(form.cleaned_data['username']))
+    else:
+        form = UserForm()
+
+    return render(request, 'registration/register.html', {'form': form})
