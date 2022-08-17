@@ -1,0 +1,41 @@
+<nav class="navbar sticky-md-top navbar-expand-lg navbar-dark ps-md-5 color-base">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'index' %}">Inicio</a>
+        </li>
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'welcome' %}">Bienvenido</a>
+        </li>
+        {% endif %}
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'about' %}">Quiénes Somos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'location' %}">Locales</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'contact' %}">Contacto</a>
+        </li>
+        {% if not user.is_authenticated %}
+        <li class="nav-item">
+          <a class="btn btn-light" href="{% url 'login' %}">Iniciar Sesión</a>
+        </li>
+        <li class="nav-item ms-2">
+          <a class="btn btn-light" href="{% url 'register' %}">Registrarse</a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="btn btn-dark" href="{% url 'logout' %}">Cerrar Sesión</a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>

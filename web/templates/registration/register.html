@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="container my-md-4 my-3 text-center" style="list-style-position: inside">
+    <h1 class="text-center border-color p-2">Registrarse</h1>
+    <form method='POST'>
+        {% csrf_token %}
+        {% if form.errors %}
+            <p>Tu nombre de usuario y/o contraseña son incorrectos. Por favor, intenta nuevamente</p>
+        {% endif %}
+        <fieldset class="form-group">
+            {{ form.as_p }}
+        </fieldset>
+        <input type="submit" value="Registrarse" class="btn my-3 text-white color-base">
+    </form>
+</div>
+{% endblock %}
