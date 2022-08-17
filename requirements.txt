@@ -1,9 +1,5 @@
 asgiref==3.5.2
-<<<<<<< HEAD
 Django==4.1
-=======
-Django==3.2.4
->>>>>>> 007a2d7d715b4feb2626a4275b57d2c772efee6e
 gunicorn==20.1.0
 pytz==2022.1
 sqlparse==0.4.2
